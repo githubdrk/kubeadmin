@@ -10,3 +10,16 @@ spec:
       image: dockerdrk/dockerregestry:$(Build.BuildId)
       ports:
         - containerPort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: my-app
+spec:
+  selector:
+    app: my-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer   
