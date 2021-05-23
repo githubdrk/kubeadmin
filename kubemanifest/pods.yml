@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: my-app
-      image: kishanpeddaboina/my-app:tagVersion
+      image: dockerdrk/dockerregestry:$(Build.BuildId)
       ports:
         - containerPort: 8080
